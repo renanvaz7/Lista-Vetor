@@ -10,51 +10,26 @@ namespace Lista_Vetor_09
     {
         static void Main(string[] args)
         {
-            int[] N = new int[10];
-            int[] N2 = new int[10];
-            int i, a, aux, n;
-            a = 1;
-            float fatorial = 1;
+            int[] A = new int[15];
+            int i, aux = 1;
 
-            Console.WriteLine("Digite um valor de N");
-            a = Int32.Parse(Console.ReadLine());
-
-            for (i = 1; i < 15; i++)
-            {
-                N2[i] = N[i];
-            }
-
-            Console.WriteLine("Vetor N2");
+            Console.WriteLine("Vetor A");
             Console.WriteLine();
 
-            for (i = 0; i <= 10; i++)
+            for (i = 0; i < 15; i++)
             {
-                for (n = 0; n <= 9; n++)
+                if (i == 0)
                 {
-                    if (N2[n] < N2[n + 1])
-                    {
-                        aux = N2[n];
-                        N2[n] = N2[n + 1];
-                        N2[n + 1] = aux;
-                    }
+                    A[i] = 1;
+                    Console.WriteLine("Posição " + i + " do vetor " + A[i]);
                 }
-            }
 
-            Console.WriteLine("Vetor N");
-            Console.WriteLine();
-
-            for (i = 0; i < 10; i++)
-            {
-                Console.WriteLine(N[i]);
-                Console.WriteLine();
-            }
-
-            Console.WriteLine("Vetor N2 ordenado");
-            Console.WriteLine();
-
-            for (i = 0; i < 10; i++)
-            {
-                Console.WriteLine(N2[i]);
+                else
+                {
+                    aux = aux * i;
+                    A[i] = aux;
+                    Console.WriteLine("Posição " + i + " do vetor " + A[i]);
+                }
             }
             Console.ReadKey();
         }
